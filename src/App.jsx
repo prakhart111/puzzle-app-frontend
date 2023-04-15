@@ -10,6 +10,7 @@ import Home from './Pages/Home';
 import Profile from './Pages/Profile';
 import AdminDashboard from './Pages/AdminDashboard';
 import LeaderBoard from './Pages/LeaderBoard';
+import Game from './Pages/Game';
 
 function App() {
 
@@ -30,6 +31,7 @@ function App() {
                 <Route key={"home"} path="/home" element={<Home />} />,
                 <Route key={"profile"} path="/profile" element={<Profile />} />,
                 <Route key={"leaderboard"} path="/leaderboard" element={<LeaderBoard />} />,
+                <Route key={"game"} path="/game" element={ <Game /> } />,
               ]
               :null
             }

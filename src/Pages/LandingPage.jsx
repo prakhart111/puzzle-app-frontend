@@ -26,6 +26,7 @@ const LandingPage = ({setIsLoggedin, setIsAdmin}) => {
         }
       }
       console.log("Auto Login Success");
+      alert("Auto Login Success")
     }).catch((err) => {
       console.log(err)
     })

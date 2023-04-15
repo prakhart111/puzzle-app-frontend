@@ -13,13 +13,28 @@ const Home = () => {
     setUser(null);
     navigate("/");
   }
+
+
+
   return (
     <div>
-        Hey {user.name} !
+      <div className="flex sm:flex-row flex-col align-center justify-center items-center gap-4">
+        <p className='text-[25px] font-black w-full text-center sm:min-w-[200px]'> Hey {user.name} !</p>
         <Button text={"Visit Your Profile"} onClick={() => {navigate("/profile")}} />
         <Button text={"Leaderboard"} onClick={() => {navigate("/leaderboard")}} />
         <Button text={"Logout"} onClick={logout} />
-
+      </div>
+        
+      <div className="flex flex-col items-center justify-center align-center p-24 gap-8">
+        <Button text={"Start New Game"} onClick={() => {navigate("/game")}} />
+        <Button text={"Resume Prev Game"} onClick={() => {navigate("/game",{
+          state: {
+            level: user?.level || 2,
+            score: user?.score || 20,
+            time: user?.time || 20,
+          }
+        })}} />
+      </div>
     </div>
   )
 }

@@ -46,7 +46,7 @@ const SignIn = ({isAdmin,setIsAdmin,isLoggedin,setIsLoggedin}) => {
                 </div>
             </div>
             {/* FORM GOES HERE */}
-            <form className='pt-12 flex flex-col items-center' onSubmit={handleLoginSubmit}>
+            <form className='pt-12  scale-[0.8] sm:scale-[1] flex flex-col items-center' onSubmit={handleLoginSubmit}>
                 <div className='flex flex-col'>
                     <label className='font-extrabold text-[25px]'>EMAIL</label>
                     <input 
@@ -64,7 +64,7 @@ const SignIn = ({isAdmin,setIsAdmin,isLoggedin,setIsLoggedin}) => {
                     className='bg-[#FFFFFF] text-black font-black px-4 min-w-[280px] min-h-[62px] text-[25px]' type='password' />
                 </div>
 
-            <div className='absolute flex flex-col gap-4 items-center bottom-40'>
+            <div className='flex flex-col gap-4 items-center mt-28'>
                 <Button text='SIGN IN' />
                 <p className='font-extrabold text-[25px]'>New User? <span 
                 onClick={
