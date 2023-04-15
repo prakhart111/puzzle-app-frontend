@@ -1,22 +1,25 @@
 import React from 'react'
+import { useContext } from 'react'
+import { TimeContext } from '../TimeContext'
 
 
 const Timer = ({gameStartTime,stop}) => {
 
-    const [time, setTime] = React.useState(0)
+    const [timeL, setTimeL] = React.useState(0)
+
 
     React.useEffect(() => {
         const timer = setTimeout(() => {
             if(!stop)
-                setTime(time + 1);
+                setTimeL(timeL + 1);
         }, 1000);
         return () => clearTimeout(timer);
-    }, [time]);
+    }, [timeL]);
 
 
   return (
     <div>
-        <p>Time : {time+gameStartTime}</p><br />
+        <p>Time : {timeL+gameStartTime}</p><br />
     </div>
   )
 }

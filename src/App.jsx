@@ -11,6 +11,8 @@ import Profile from './Pages/Profile';
 import AdminDashboard from './Pages/AdminDashboard';
 import LeaderBoard from './Pages/LeaderBoard';
 import Game from './Pages/Game';
+import { TimeContextProvider } from './TimeContext';
+import IntroPage from './Pages/IntroPage';
 
 function App() {
 
@@ -21,6 +23,7 @@ function App() {
   return (
     <div className="text-extrabold text-white bg-gray-400">
       <UserContextProvider>
+        <TimeContextProvider>
       <Routes>
             <Route path="/" element={<LandingPage isAdmin={isAdmin} setIsAdmin={setIsAdmin} isLoggedin={isLoggedin} setIsLoggedin={setIsLoggedin}/>} />
             <Route path="/signin" element={<SignIn isAdmin={isAdmin} setIsAdmin={setIsAdmin} isLoggedin={isLoggedin} setIsLoggedin={setIsLoggedin}/>} />
@@ -32,6 +35,7 @@ function App() {
                 <Route key={"profile"} path="/profile" element={<Profile />} />,
                 <Route key={"leaderboard"} path="/leaderboard" element={<LeaderBoard />} />,
                 <Route key={"game"} path="/game" element={ <Game /> } />,
+                <Route key={"game-intro"} path="/game-intro" element={ <IntroPage /> } />,
               ]
               :null
             }
@@ -44,6 +48,7 @@ function App() {
             }
             <Route path="*" element={<Navigate replace to={"/"} /> } />
       </Routes>
+      </TimeContextProvider>
       </UserContextProvider>
     </div>
   )

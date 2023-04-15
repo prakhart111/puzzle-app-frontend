@@ -6,11 +6,11 @@ import blankAvatar from '../assets/blank-avatar.png'
 const Profile = () => {
   const {user} = useContext(UserContext)
   return (
-    <div>
-        Welcome {user.name} !<br/>
-        Your Score : {user.overallGameData.score}<br/>
-        Email: {user.email}
+    <div className='bg-black'>
         <img src={user.avatar !== "" ? user.avatar : blankAvatar} width="80px" height="80px"/>
+        Welcome {user.name} !<br/>
+        High Score : {user.overallGameData.score}<br/>
+        Email: {user.email}
     </div>
   )
 }

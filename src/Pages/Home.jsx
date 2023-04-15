@@ -17,7 +17,7 @@ const Home = () => {
 
 
   return (
-    <div>
+    <div className='bg-black'>
       <div className="flex sm:flex-row flex-col align-center justify-center items-center gap-4">
         <p className='text-[25px] font-black w-full text-center sm:min-w-[200px]'> Hey {user.name} !</p>
         <Button text={"Visit Your Profile"} onClick={() => {navigate("/profile")}} />
@@ -26,12 +26,12 @@ const Home = () => {
       </div>
         
       <div className="flex flex-col items-center justify-center align-center p-24 gap-8">
-        <Button text={"Start New Game"} onClick={() => {navigate("/game")}} />
+        <Button text={"Start New Game"} onClick={() => {navigate("/game-intro")}} />
         <Button text={"Resume Prev Game"} onClick={() => {navigate("/game",{
           state: {
-            level: user?.level || 2,
-            score: user?.score || 20,
-            time: user?.time || 20,
+            level: user?.prevGameData?.level || 0,
+            score: user?.prevGameData?.score || 0,
+            time: user?.prevGameData?.time || 0,
           }
         })}} />
       </div>
