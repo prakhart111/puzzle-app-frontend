@@ -4,6 +4,7 @@ import logo from '../assets/LOGO.png'
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import AvatarSelector from '../components/AvatarSelector'
+import { API_URL } from '../constants'
 
 const Register = () => {
     const navigate = useNavigate();
@@ -15,7 +16,7 @@ const Register = () => {
     const handleRegisterSubmit = async (e) => {
         e.preventDefault();
         try{
-            const {data} = await axios.post("http://localhost:5000/api/register", {name,email,password,avatar})
+            const {data} = await axios.post(`${API_URL}/api/register`, {name,email,password,avatar})
             console.log(data);
             alert("Registration Successful, \nYou can now login");
             navigate('/signin');

@@ -41,4 +41,64 @@ td{
   background-color: rgb(56, 38, 0);
   text-align: center;
 }
+.lost-1{
+  background-image: url("./assets/lost1.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  width: 100%;
+}
+.lost-2{
+  background-image: url("./assets/lost2.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  width: 100%;
+}
+.intro-page{
+  background-image: url("./assets/intro.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  width: 100%;
+}
+.game-page{
+  background-image: url("./assets/game-page.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  width: 100%;
+}
+
+.question-box{
+  width: 50%;
+  height: 60vh;
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(255, 255, 255, 0.8);
+  color:black;
+}
+
+@media screen and (max-width: 768px){
+  .question-box{
+    width: 80%;
+    padding-bottom: 100px !important;
+  }
+  button{
+    transform: scale(0.8);
+  }
+  .score-board{
+    transform: scale(0.5);
+    position: absolute;
+    top:-25px;
+    left: -25px;
+  }
+  input{
+    transform: scale(0.8);
+  }
+}
 

@@ -5,6 +5,7 @@ import { useNavigate, Navigate } from 'react-router-dom'
 import axios from 'axios'
 import { useContext } from 'react'
 import { UserContext } from '../UserContext'
+import { API_URL } from '../constants'
 
 const SignIn = ({isAdmin,setIsAdmin,isLoggedin,setIsLoggedin}) => {
     const navigate = useNavigate();
@@ -15,7 +16,7 @@ const SignIn = ({isAdmin,setIsAdmin,isLoggedin,setIsLoggedin}) => {
     const handleLoginSubmit = async (e) => {
         e.preventDefault();
         try{
-            const {data} = await axios.post("http://localhost:5000/api/login", {email,password},{withCredentials:true})
+            const {data} = await axios.post(`${API_URL}/api/login`, {email,password},{withCredentials:true})
             console.log(data)
             if(data.isAdmin){
                 setIsAdmin(true);

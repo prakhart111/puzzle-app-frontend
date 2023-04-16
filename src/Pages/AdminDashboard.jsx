@@ -3,6 +3,7 @@ import axios from 'axios'
 import blankAvatar from '../assets/blank-avatar.png'
 import { useContext } from 'react'
 import { UserContext } from '../UserContext'
+import { API_URL } from '../constants'
 
 const AdminDashboard = () => {
     const [users, setUsers] = React.useState([])
@@ -10,7 +11,7 @@ const AdminDashboard = () => {
     const email = user.email
 
     React.useEffect(() => {
-        axios.post("http://localhost:5000/api/admin/userlist", { email })
+        axios.post(`${API_URL}/api/admin/userlist`, { email })
         .then((res) => {
             setUsers(res.data)
         })

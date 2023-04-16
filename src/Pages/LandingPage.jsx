@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom'
 import { useContext } from 'react'
 import { UserContext } from '../UserContext'
 import axios from 'axios'
+import { API_URL } from '../constants'
 
 const LandingPage = ({setIsLoggedin, setIsAdmin}) => {
     const navigate = useNavigate();
@@ -12,7 +13,7 @@ const LandingPage = ({setIsLoggedin, setIsAdmin}) => {
 
 //Auto Login
   React.useEffect(() => {
-    axios.get("http://localhost:5000/api/autologin", {withCredentials:true})
+    axios.get(`${API_URL}/api/autologin`, {withCredentials:true})
     .then((res) => {
       if(res.data){
         console.log(res.data);

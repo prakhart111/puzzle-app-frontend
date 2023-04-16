@@ -1,13 +1,12 @@
-import React, { useState } from 'react'
+import React, { startTransition, useState } from 'react'
 import Level0 from './Levels/Level0'
-import { Navigate } from 'react-router-dom'
 import NegativeScore from './Levels/NegativeScore'
 import GameWon from './Levels/GameWon'
-import Timer from '../components/Timer'
 import { useLocation } from 'react-router-dom'
 import { useContext } from 'react'
 import { TimeContext } from '../TimeContext'
 import { UserContext } from '../UserContext'
+import ScoreBoard from '../components/ScoreBoard'
 
 const Game = () => {
 
@@ -49,14 +48,16 @@ React.useEffect(() => {
 
 
   return (
-    <div className='bg-black p-4'>
-        <p>Score : {score}</p><br />
-        <p>Time : {time + gameStartTime}</p><br />
+    <div className='bg-black game-page'>
 
-       {(level < 5 && score>=0) ? <Level0 level={level} setLevel={setLevel} score={score} setScore={setScore} gameStartTime={gameStartTime} /> :
-        (score<0) ? <NegativeScore setStop={setStop} /> : 
-        (level === 5) ? <GameWon setStop={setStop} /> : <>Reload the game.</>
-       }
+       <ScoreBoard score={score} avatar={user.avatar} time={time+gameStartTime} />   
+        <div className='w-full h-full flex flex-col justify-center'>
+                {(level < 6 && score>=0) ? <Level0 level={level} setLevel={setLevel} score={score} setScore={setScore} gameStartTime={gameStartTime} /> :
+                (score<0) ? <NegativeScore time={time+gameStartTime} setStop={setStop} /> : 
+                (level === 6) ? <GameWon setStop={setStop} /> : <>Reload the game.</>
+            }
+        </div>
+
     </div>
   )
 }

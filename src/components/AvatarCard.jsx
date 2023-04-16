@@ -1,6 +1,4 @@
 import React from 'react'
-import { VisibilityContext } from 'react-horizontal-scrolling-menu'
-import { avatarList } from '../avatarList'
 
 export const AvatarCard = ({link,onClick,selected}) => {
     return (
