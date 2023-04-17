@@ -4,6 +4,7 @@ import { UserContext } from '../UserContext'
 import { useNavigate } from 'react-router-dom'
 import Button from '../components/Button'
 import axios from 'axios'
+import { API_URL } from '../constants'
 
 const Home = () => {
   const {user,setUser} = useContext(UserContext)
