@@ -18,7 +18,7 @@ const Home = () => {
   return (
     <div className='bg-black intro-page'>
       <div className="flex sm:flex-row flex-col align-center justify-center items-center gap-4">
-        <p className='text-[25px] font-black w-full text-center sm:min-w-[200px]'> Hey {user.name} !</p>
+        <p className='text-[25px] font-black w-full text-center sm:min-w-[200px]'> Hey {user?.name} !</p>
         <Button text={"Visit Your Profile"} onClick={() => {navigate("/profile")}} />
         <Button text={"Leaderboard"} onClick={() => {navigate("/leaderboard")}} />
         <Button text={"Logout"} onClick={logout} />
