@@ -14,6 +14,7 @@
 - Wrong Answer = -5 * levelNumber
 - You lose if your score gets negative
 - You win if all answers are correct.
+- You can also resume your game after page refresh or even log out.
 - ADMIN EMAIL : 200104078@hbtu.ac.in
 - ADMIN EMAIL is also set as correct answer for all LEVELS, which will help viewers to quickly go through entire game.
 - Figma Design File : https://www.figma.com/file/5t0Jcb8D04CrQaw1KjDaKl/Puzzle?node-id=0%3A1&t=Xa2584HClxUFuv3w-1
